@@ -1,5 +1,6 @@
 import 'package:action_planner/constants/colors.dart';
 import 'package:action_planner/model/todo.dart';
+import 'package:action_planner/screens/Navbar.dart';
 import 'package:action_planner/widgets/todo_item.dart';
 import 'package:flutter/material.dart';
 
@@ -69,6 +70,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: tdBGColor,
+      drawer: Navbar(),
       appBar: _buildAppBar(),
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
@@ -175,26 +177,26 @@ class _HomeState extends State<Home> {
 
   AppBar _buildAppBar() {
     return AppBar(
-        backgroundColor: tdBGColor,
-        elevation: 0,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const Icon(
-              Icons.menu,
-              color: tdBlack,
-              size: 30,
+      backgroundColor: tdBGColor,
+      elevation: 0,
+      title: Text('Action Planner'), // Add your title here
+      actions: [
+        Container(
+          height: 35,
+          width: 35,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(30),
+            child: CircleAvatar(
+              radius: 30,
+              backgroundImage: AssetImage('assets/images/avatar.jpg'),
             ),
-            Container(
-              height: 40,
-              width: 40,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(30),
-                child: Image.asset('assets/images/avatar.jpg'),
-              ),
-            )
-          ],
-        ));
+          ),
+        ),
+        SizedBox(
+            width:
+                16), // Optional: Add some space between the container and the edge
+      ],
+    );
   }
 
   // Helper method to add a new ToDo item
