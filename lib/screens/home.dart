@@ -217,7 +217,9 @@ class _HomeState extends State<Home> {
             borderRadius: BorderRadius.circular(30),
             child: CircleAvatar(
               radius: 30,
-              backgroundImage: AssetImage('assets/images/avatar.jpg'),
+              backgroundImage: _user != null
+                  ? NetworkImage(_user?.photoURL ?? '')
+                  : AssetImage('assets/images/avatar.jpg') as ImageProvider,
             ),
           ),
         ),

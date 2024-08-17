@@ -9,10 +9,18 @@
       "client_info": {
         "mobilesdk_app_id": "1:319866823641:android:71692cb7a1015cb3106fc8",
         "android_client_info": {
-          "package_name": "com.pavannaik.actionplanner"
+          "package_name": "com.yourcompany.actionplanner"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "319866823641-o2uu30p89fq6u8t4qc1na1dko2hpuig8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.yourcompany.actionplanner",
+            "certificate_hash": "925c0a4beedd4eb92c85f6f614d740d8fe35eb3e"
+          }
+        },
         {
           "client_id": "319866823641-ibe84do2cbvsmt7o31lvrtoa115mrpli.apps.googleusercontent.com",
           "client_type": 3
@@ -34,7 +42,7 @@
               "client_id": "319866823641-3il4mmn5ddq8holeqn2jj02k839etemj.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.pavannaik.actionPlanner"
+                "bundle_id": "com.example.actionPlanner"
               }
             }
           ]
