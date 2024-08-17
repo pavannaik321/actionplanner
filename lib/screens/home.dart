@@ -1,7 +1,10 @@
+import 'dart:math';
+
 import 'package:action_planner/constants/colors.dart';
 import 'package:action_planner/model/todo.dart';
 import 'package:action_planner/screens/Navbar.dart';
 import 'package:action_planner/widgets/todo_item.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -12,6 +15,10 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  // firebase Setup
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  User? _user;
+
   final todosList = ToDo.todoList();
   List<ToDo> _foundToDo = [];
   final _textController = TextEditingController();
@@ -20,6 +27,25 @@ class _HomeState extends State<Home> {
   void initState() {
     _foundToDo = todosList;
     super.initState();
+
+    // set the user
+    _auth.authStateChanges().listen((event) {
+      setState(() {
+        _user = event;
+      });
+    });
+  }
+
+  // handel google signin
+  Future<void> handleGoogleSignIn() async {
+    try {
+      GoogleAuthProvider googleProvider = GoogleAuthProvider();
+
+      // Await the sign-in process
+      await _auth.signInWithProvider(googleProvider);
+    } catch (error) {
+      print("Sign-in error: $error");
+    }
   }
 
   // Method for handling search
@@ -70,7 +96,10 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: tdBGColor,
-      drawer: Navbar(),
+      drawer: Navbar(
+        user: _user,
+        handleGoogleSignIn: handleGoogleSignIn,
+      ),
       appBar: _buildAppBar(),
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
