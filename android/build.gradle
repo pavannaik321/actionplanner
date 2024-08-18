@@ -4,7 +4,7 @@ allprojects {
         mavenCentral()
     }
 }
-
+ext.kotlin_version = '1.8.0'
 rootProject.buildDir = "../build"
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
@@ -16,3 +16,4 @@ subprojects {
 tasks.register("clean", Delete) {
     delete rootProject.buildDir
 }
+
