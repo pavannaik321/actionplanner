@@ -64,6 +64,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '319866823641',
     projectId: 'actionplanner-1f6f3',
     storageBucket: 'actionplanner-1f6f3.appspot.com',
+    androidClientId: '319866823641-3b9quiqkjnim6lueefhu984v4t2ufpso.apps.googleusercontent.com',
     iosClientId: '319866823641-3il4mmn5ddq8holeqn2jj02k839etemj.apps.googleusercontent.com',
     iosBundleId: 'com.example.actionPlanner',
   );
@@ -74,6 +75,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '319866823641',
     projectId: 'actionplanner-1f6f3',
     storageBucket: 'actionplanner-1f6f3.appspot.com',
+    androidClientId: '319866823641-3b9quiqkjnim6lueefhu984v4t2ufpso.apps.googleusercontent.com',
     iosClientId: '319866823641-3il4mmn5ddq8holeqn2jj02k839etemj.apps.googleusercontent.com',
     iosBundleId: 'com.example.actionPlanner',
   );

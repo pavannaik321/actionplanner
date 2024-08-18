@@ -236,6 +236,10 @@ class _HomeState extends State<Home> {
                 padding: const EdgeInsets.only(top: 8.0),
                 child: Column(
                   children: [
+                    TextButton(
+                      onPressed: () => throw Exception(),
+                      child: const Text("Throw Test Exception"),
+                    ),
                     searchBox(), // Assuming searchBox() is a method that returns a widget
                     const SizedBox(
                         height:
