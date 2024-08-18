@@ -62,7 +62,7 @@ class _NavbarState extends State<Navbar> {
                                 ? widget.user?.displayName ?? 'Pavan Naik'
                                 : 'Welcome, Guest!',
                             style: TextStyle(
-                              color: Colors.black,
+                              color: Color.fromARGB(255, 0, 0, 0),
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
                             ),
